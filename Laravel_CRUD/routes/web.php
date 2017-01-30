@@ -27,7 +27,7 @@ Route::post('login', 'pTicketCalculationController@login');*/
 
 
 
-Route::resource('pTicketCalculationCRUD','pTicketCalculationController');
+Route::resource('pTicketCalculationCRUD','TicketCalculationController');
 
 Auth::routes();
 

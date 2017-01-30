@@ -19,9 +19,36 @@
 
 use Illuminate\Support\Facades\Input;
 
+/*Route::get('login', function() {
+  return View::make('login');
+});
+//POST route
+Route::post('login', 'pTicketCalculationController@login');*/
 
 
-Route::resource('pTicketCalculationCRUD','pTicketCalculationController');
+
+Route::resource('pTicketCalculationCRUD','TicketCalculationController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+//Route::resource('pTicketCalculationCRUD', 'pTicketCalculationCRUD@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
 
 Auth::routes();
 
