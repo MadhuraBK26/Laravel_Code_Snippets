@@ -1,0 +1,18 @@
+// app/database/seeds/UserTableSeeder.php
+<?php
+use Illuminate\Database\Seeder;
+
+
+class UsersTableSeeder extends Seeder
+{
+  public function run()
+  {
+    DB::table('pTicketCalculation')->delete();
+    
+    pTicketCalculation::create(array(
+    	'name'     => 'Rakesh',
+        'email'    => 'sharmarakesh395@gmail.com',
+        'password' => Hash::make('mypass'),
+    ));
+  }
+}
