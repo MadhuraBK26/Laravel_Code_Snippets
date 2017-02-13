@@ -36,23 +36,25 @@ class UserApiController extends Controller
 
     }
 
-    public function showUserDetailsBasedOnHashKey(Request $request, $userid=null){
+    public function showUserDetailsBasedOnHashKey(Request $request, $userid=null) 
+    {
 
         $apiKey =  $request->header('apiKey');
         $getDataSet = $this->userApiRepository->userDetailsApiWithHashKey($apiKey, $userid);
 
-        if($getDataSet){
+        if($getDataSet) {
             return response()->json($getDataSet);
         }
 
     }
 
-    public function showFilterResultsOnUser(Request $request){
+    public function showFilterResultsOnUser(Request $request)
+    {
         $filters = $request->all();
         $apiKey =  $request->header('apiKey');
         $getDataSet = $this->userApiRepository->getFilterResultsOnUser($apiKey, $filters);
 
-        if($getDataSet){
+        if($getDataSet) {
             return response()->json($getDataSet);
         }
     }
