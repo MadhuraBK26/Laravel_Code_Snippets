@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Maatwebsite\Excel\Facades\Excel;
+
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreFeedbackRequest;
 use App\Models\FeedbackTransaction;
@@ -628,5 +630,20 @@ class HomeController extends Controller
         return view('org_tree')
             ->with('getRoleDetails',$getRoleDetails);
     }
+
+
+    if ($request->hasFile('excel_file')) {
+ $res = Excel::load($request->file('excel_file'), function($reader) {
+ return $reader;
+ })->get();
+//      return $res;
+        foreach($res[0] as $r){
+                $input['name'] = $r['name'];
+                $input['mobile'] = $r['mobile'];
+                $input['country_id'] = $request->country_id;
+                $input['city_id'] = $request->city_id;
+ Customer::create($input);
+ }
+}
 
 }

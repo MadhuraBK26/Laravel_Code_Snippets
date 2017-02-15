@@ -1,5 +1,14 @@
 <?php
 
+
+Excel::create('Excel file name', function ($excel) {
+ $data = 'DB or Eloquent query place here';
+ $excel->sheet('Excel sheet', function ($sheet) use ($data) {
+ $sheet->setOrientation('landscape');
+ $sheet->fromArray($data);
+ });
+})->export('xls');
+
 return array(
 
     'cache'      => array(

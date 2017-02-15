@@ -16,7 +16,7 @@
     "hieu-le/active": "^2.2",
     "barryvdh/laravel-debugbar": "^2.0",
     "venturecraft/revisionable": "1.*",
-    "maatwebsite/excel": "~2.0.0",
+    "maatwebsite/excel": "^2.1",
     "backup-manager/laravel": "^1.0",
     "bican/roles": "2.1.*",
     "graham-campbell/throttle": "^5.0",
